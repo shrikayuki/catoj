@@ -1,0 +1,45 @@
+# 主配置文件：公共配置 + 环境切换
+spring:
+  application:
+    name: catoj-server
+  profiles:
+    # 激活开发环境（改成 prod 就是生产环境）
+    active: dev
+
+  # 公共配置
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+    default-property-inclusion: non_null
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+server:
+  port: 8080
+  tomcat:
+    uri-encoding: UTF-8
+    threads:
+      max: 200
+      min-spare: 10
+
+# MyBatis Plus 公共配置
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-field: isDeleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  mapper-locations: classpath*:/mapper/**/*.xml
+  type-aliases-package: com.cat.catoj.pojo.entity
+
+# 日志公共配置
+logging:
+  pattern:
+    console: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%-5p) %clr(---){faint} %clr([%t]){faint} %clr(%-40logger{39}){cyan} %clr(:){faint} %m%n"
