@@ -115,6 +115,12 @@
                 <version>${mybatis-plus.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-jsqlparser</artifactId>
+                <version>${mybatis-plus.version}</version> <!-- 版本号必须和你用的 mybatis-plus 主包版本一致 -->
+            </dependency>
+
             <!-- ========== Druid 连接池（Spring Boot 3.x 专用） ========== -->
             <dependency>
                 <groupId>com.alibaba</groupId>
