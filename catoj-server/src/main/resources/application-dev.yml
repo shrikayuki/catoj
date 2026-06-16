@@ -35,7 +35,7 @@ spring:
   # Redis 配置
   data:
     redis:
-      host: localhost
+      host: 192.168.150.101
       port: 6379
       password: algohub2024      # 加上密码
       database: 0
@@ -48,12 +48,29 @@ spring:
 
   # RabbitMQ 配置
   rabbitmq:
-    host: localhost
+    host: 192.168.150.101
     port: 5672
     username: algohub            # Docker 配置的用户名
     password: algohub2024        # Docker 配置的密码
     virtual-host: /
     connection-timeout: 5000ms
+
+  mail:
+    host: smtp.qq.com  # 使用 QQ 邮箱
+    port: 465
+    username: 1322246106@qq.com
+    password: lwkqswctrdfdhjjb  # QQ邮箱授权码（不是密码）
+    protocol: smtp
+    default-encoding: UTF-8
+    properties:
+      mail:
+        smtp:
+          auth: true
+          ssl:
+            enable: true
+          socketFactory:
+            port: 465
+            class: javax.net.ssl.SSLSocketFactory
 
 # 开发环境日志级别
 logging:
