@@ -17,4 +17,14 @@ public final class RedisConstant {
         public static final long SEND_INTERVAL_SECONDS = 60;
         public static final int MAX_ERROR_TIMES = 5;
     }
+
+    public static final class Auth {
+        private Auth() {}
+
+        /** Refresh Token 白名单前缀 */
+        public static final String REFRESH_TOKEN_PREFIX = "refresh:token:";
+
+        /** Refresh Token 黑名单前缀（登出/撤销） */
+        public static final String REFRESH_TOKEN_BLACKLIST = "refresh:blacklist:";
+    }
 }

@@ -1,4 +1,4 @@
-package com.catoj.server.service.Iml;
+package com.catoj.server.service.Impl;
 
 import cn.hutool.core.util.RandomUtil;
 import cn.hutool.core.util.StrUtil;

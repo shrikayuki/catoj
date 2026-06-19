@@ -90,10 +90,14 @@ springdoc:
     tags-sorter: alpha
     operations-sorter: alpha
 
-# 自定义配置
+# JWT 双 Token 配置
 catoj:
   jwt:
-    secret: catoj-secret-key-for-dev-please-change-in-prod
-    expiration: 86400000
-    header: Authorization
-    token-prefix: Bearer
+    access:
+      secret: catoj-access-secret-key-for-dev-please-change-in-prod
+      expiration: 900  # 15分钟（秒）
+      header: Authorization
+      prefix: Bearer
+    refresh:
+      secret: catoj-refresh-secret-key-for-dev-please-change-in-prod
+      expiration: 604800  # 7天（秒）

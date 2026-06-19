@@ -48,6 +48,6 @@ public final class MailUtils {
      * 验证码格式校验
      */
     public static boolean isValidCode(String code) {
-        return code != null && code.matches("^\\d{6}$");
+        return code != null && code.matches("^[A-Za-z0-9]{6}$");
     }
 }

@@ -26,8 +26,6 @@ public class R<T> {
     @Schema(description = "响应数据")
     private T data;
 
-    @Schema(description = "请求追踪ID", example = "1af123c11412e")
-    private String requestId;
 
     /**
      * 成功响应（无数据）
@@ -78,7 +76,6 @@ public class R<T> {
         this.code = code;
         this.msg = msg;
         this.data = data;
-        this.requestId = MDC.get(Constant.REQUEST_ID_HEADER);
     }
 
     /**
@@ -88,11 +85,4 @@ public class R<T> {
         return code == SUCCESS;
     }
 
-    /**
-     * 设置请求ID（链式调用）
-     */
-    public R<T> requestId(String requestId) {
-        this.requestId = requestId;
-        return this;
-    }
 }

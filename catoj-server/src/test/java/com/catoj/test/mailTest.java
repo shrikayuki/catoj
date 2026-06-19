@@ -15,7 +15,7 @@ public class mailTest {
 
     @Test
     void sendMailTest() {
-        mailService.sendVerifyCode("2892661562@qq.com");
+        mailService.sendVerifyCode("2915660600@qq.com");
     }
 }
 

@@ -60,8 +60,14 @@ public class User implements Serializable {
     /**
      * 状态：0-封禁，1-正常
      */
-    @Schema(description = "状态：0-封禁，1-正常", allowableValues = {"0", "1"}, example = "1")
-    private Integer status;
+    @Schema(description = "状态：false-封禁，true-正常", allowableValues = {"0", "1"}, example = "1")
+    private Boolean status;
+
+    /**
+     * 用户权限: 0-普通用户， 1-管理员
+     */
+    @Schema(description = "状态：0-普通用户，1-管理员", allowableValues = {"0", "1"}, example = "0")
+    private Integer role;
 
     /**
      * 创建时间
