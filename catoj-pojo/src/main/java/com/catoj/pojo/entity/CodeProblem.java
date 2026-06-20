@@ -6,6 +6,8 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import java.time.LocalDateTime;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
+
+import com.catoj.common.enums.ProblemDifficultyEnum;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -33,6 +35,11 @@ public class CodeProblem implements Serializable {
     private Long id;
 
     /**
+     * 题目编号
+     */
+    private Integer problemNo;
+
+    /**
      * 题目标题
      */
     private String title;
@@ -55,7 +62,7 @@ public class CodeProblem implements Serializable {
     /**
      * 难度：1-简单，2-中等，3-困难
      */
-    private Integer difficulty;
+    private ProblemDifficultyEnum difficulty;
 
     /**
      * 时间限制（ms）

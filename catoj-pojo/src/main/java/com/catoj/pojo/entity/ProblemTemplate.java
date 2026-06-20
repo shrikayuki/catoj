@@ -1,5 +1,6 @@
 package com.catoj.pojo.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import java.time.LocalDateTime;
@@ -11,17 +12,17 @@ import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 输入输出图片表
+ * 题目代码模板表
  * </p>
  *
  * @author rance
- * @since 2026-06-19
+ * @since 2026-06-20
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("problem_io_img")
-public class ProblemIoImg implements Serializable {
+@TableName("problem_template")
+public class ProblemTemplate implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -32,29 +33,40 @@ public class ProblemIoImg implements Serializable {
     private Long id;
 
     /**
-     * 输入输出描述ID
+     * 题目ID
      */
-    private Long ioId;
+    @TableField("problem_id")
+    private Long problemId;
 
     /**
-     * 图片地址
+     * 语言：1-c,2-java,3-cpp,4-python
      */
-    private String url;
+    @TableField("language")
+    private Integer language;
 
     /**
-     * 排序
+     * 代码模板
      */
-    private Integer sort;
+    @TableField("template")
+    private String template;
 
     /**
-     * 是否被删除
+     * 是否被删除 默认未删除
      */
+    @TableField("deleted")
     private Boolean deleted;
 
     /**
      * 创建时间
      */
+    @TableField("create_time")
     private LocalDateTime createTime;
+
+    /**
+     * 更新时间
+     */
+    @TableField("update_time")
+    private LocalDateTime updateTime;
 
 
 }

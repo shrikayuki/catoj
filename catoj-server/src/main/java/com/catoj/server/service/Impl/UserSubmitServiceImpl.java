@@ -1,4 +1,4 @@
-package com.catoj.server.service.impl;
+package com.catoj.server.service.Impl;
 
 import com.catoj.pojo.entity.UserSubmit;
 import com.catoj.server.mapper.UserSubmitMapper;

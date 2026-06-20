@@ -1,5 +1,6 @@
 package com.catoj.pojo.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import java.time.LocalDateTime;
@@ -49,12 +50,18 @@ public class ProblemIo implements Serializable {
     /**
      * 样例解释
      */
-    private String explain;
+    @TableField(value = "`explain`")
+    private String descExplain;
 
     /**
      * 排序（多个样例时）
      */
     private Integer sort;
+
+    /**
+     * 是否被删除
+     */
+    private Boolean deleted;
 
     /**
      * 创建时间

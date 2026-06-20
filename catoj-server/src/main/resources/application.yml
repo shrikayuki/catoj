@@ -32,14 +32,16 @@ mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    default-enum-type-handler: com.baomidou.mybatisplus.core.handlers.MybatisEnumTypeHandler
+  type-enums-package: com.catoj.common.enums
   global-config:
     db-config:
-      id-type: auto
+      id-type: assign_id
       logic-delete-field: isDeleted
       logic-delete-value: 1
       logic-not-delete-value: 0
   mapper-locations: classpath*:/mapper/**/*.xml
-  type-aliases-package: com.cat.catoj.pojo.entity
+  type-aliases-package: com.catoj.pojo.entity
 
 # 日志公共配置
 logging:

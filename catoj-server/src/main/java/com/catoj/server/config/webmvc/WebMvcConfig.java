@@ -18,7 +18,9 @@ public class WebMvcConfig implements WebMvcConfigurer {
         registry.addInterceptor(jwtInterceptor)
                 .addPathPatterns("/**")           // ← 拦截所有
                 .excludePathPatterns(
-                        "/api/auth/**",               // ← 认证模块全部放行
+                        "/api/auth/**",
+                        "/api/problem/**",
+                        "/api/template/**",
                         "/captcha/**",
                         "/swagger-ui/**",
                         "/swagger-ui.html",

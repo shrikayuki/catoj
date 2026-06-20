@@ -6,6 +6,9 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import java.time.LocalDateTime;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
+
+import com.catoj.common.enums.CodeLanguageEnum;
+import com.catoj.common.enums.SubmitStatusEnum;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -50,12 +53,12 @@ public class UserSubmit implements Serializable {
     /**
      * 语言：1-c,2-java,3-cpp,4-python
      */
-    private Integer language;
+    private CodeLanguageEnum language;
 
     /**
      * 状态：0-等待，1-运行中，2-通过，3-失败，4-编译错误，5-超时
      */
-    private Integer status;
+    private SubmitStatusEnum submitStatus;
 
     /**
      * 运行时间(ms)
